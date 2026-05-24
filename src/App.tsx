@@ -1,29 +1,29 @@
 import { useState, useEffect, useRef } from "react";
-import { 
-  Code2, 
-  Menu, 
-  X, 
-  ChevronDown, 
-  ExternalLink, 
-  Bot, 
-  Building2, 
-  LineChart, 
-  Mail, 
+import {
+  Code2,
+  Menu,
+  X,
+  ChevronDown,
+  ExternalLink,
+  Bot,
+  Building2,
+  LineChart,
+  Mail,
   Phone
 } from "lucide-react";
 import { motion } from "motion/react";
 
 // Custom SVG Icons for GitHub and LinkedIn matching Lucide style
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    width="20" 
-    height="20" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    fill="none" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    stroke="currentColor"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     {...props}
   >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -32,15 +32,15 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    width="20" 
-    height="20" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    fill="none" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    stroke="currentColor"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     {...props}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -59,7 +59,7 @@ const projectCards = [
     description: "SaaS marketplace to deploy 60+ AI workflows on n8n — WhatsApp bots, CRM enrichers, and real-time analytics.",
     tags: ["Next.js", "n8n", "SaaS", "Supabase"],
     gradient: "linear-gradient(137deg, #FF3D77 0%, #FFB1CE 45%, #FF9D3C 100%)",
-    url: "https://github.com/anishpatil146"
+    url: "https://autovate-ashy.vercel.app/"
   },
   {
     title: "Company Handler",
@@ -69,7 +69,7 @@ const projectCards = [
     description: "Operations platform with multi-role access control, task management, and command center terminal dashboards.",
     tags: ["React", "RBAC", "PostgreSQL", "Auth"],
     gradient: "linear-gradient(137deg, #FFFFFF 0%, #7DD3FC 45%, #06B6D4 100%)",
-    url: "https://github.com/anishpatil146"
+    url: "https://companyhandler-saas.vercel.app/"
   },
   {
     title: "Assetura",
@@ -79,7 +79,7 @@ const projectCards = [
     description: "AI-powered trading terminal for crypto and stocks with real-time charting, signals, and AI financial advisors.",
     tags: ["React", "FinTech", "WebSockets", "AI"],
     gradient: "linear-gradient(137deg, #4361EE 0%, #E0AEFF 45%, #F72585 100%)",
-    url: "https://github.com/anishpatil146"
+    url: "https://asseturatapp.vercel.app/"
   }
 ];
 
@@ -130,18 +130,18 @@ export function FeatureCard({ title, description, icon: Icon, category, tags, gr
       className="relative flex flex-col justify-start items-start w-full max-w-[260px] md:max-w-[300px] group mx-auto"
     >
       {/* Glow Background (Crucial) */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-[260px] md:h-[300px] opacity-60 rounded-[40px] pointer-events-none transition-all duration-500 group-hover:scale-110 group-hover:opacity-85"
-        style={{ 
-          background: gradient, 
-          filter: "blur(45px)" 
+        style={{
+          background: gradient,
+          filter: "blur(45px)"
         }}
       />
-      
+
       {/* Foreground Card with Gradient Border (Crucial) */}
-      <div 
+      <div
         className="relative z-10 self-stretch h-[260px] md:h-[300px] rounded-[40px] overflow-hidden transition-all duration-300"
-        style={{ 
+        style={{
           border: "8px solid transparent",
           background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, ${gradient} border-box`
         }}
@@ -161,23 +161,23 @@ export function FeatureCard({ title, description, icon: Icon, category, tags, gr
               {description}
             </p>
           </div>
-          
+
           {/* Bottom content */}
           <div>
             <div className="flex flex-wrap gap-1 mb-2.5">
               {tags.map((tag) => (
-                <span 
-                  key={tag} 
+                <span
+                  key={tag}
                   className="text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-white/50 border border-white/[0.02]"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <a 
-              href={url} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors w-fit"
             >
               Live Demo <ExternalLink size={12} />
@@ -197,8 +197,8 @@ export default function App() {
   // Typewriter Terminal effect for Section 2
   const [terminalText, setTerminalText] = useState("");
   const terminalRef = useRef<HTMLDivElement>(null);
-  const fullTerminalScript = 
-`anish@iitm:~$ whoami
+  const fullTerminalScript =
+    `anish@iitm:~$ whoami
 > Anish Patil — Builder, Analyst, Engineer
 anish@iitm:~$ skills --top
 > React · Python · SQL · n8n · ML
@@ -208,7 +208,7 @@ anish@iitm:~$ status
   useEffect(() => {
     let index = 0;
     let timer: any;
-    
+
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         clearInterval(timer);
@@ -246,30 +246,30 @@ anish@iitm:~$ status
 
   return (
     <div className="relative w-full bg-[#0A0A0B] text-white selection:bg-white/10 selection:text-white min-h-screen flex flex-col font-sans">
-      
+
       {/* SECTION 1 — HERO & NAVBAR */}
       <section id="hero" className="relative w-full h-screen overflow-hidden">
         {/* Background Video */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source 
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_230229_7c9bc431-46cf-489a-948d-e8144d8eb5d4.mp4" 
-            type="video/mp4" 
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_230229_7c9bc431-46cf-489a-948d-e8144d8eb5d4.mp4"
+            type="video/mp4"
           />
         </video>
-        
+
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40 z-10" />
 
         {/* Navbar */}
         <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-5 sm:px-8 py-5">
           {/* Logo Left */}
-          <div 
+          <div
             onClick={() => handleNavClick('hero', 'Home')}
             className="flex items-center gap-2 text-white font-medium text-base cursor-pointer hover:opacity-85 transition-opacity"
           >
@@ -279,22 +279,20 @@ anish@iitm:~$ status
 
           {/* Central Nav Pill (Desktop) */}
           <nav className="hidden md:flex liquid-glass items-center gap-1 rounded-xl px-2 py-2">
-            <button 
+            <button
               onClick={() => handleNavClick('hero', 'Home')}
-              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${
-                activeSection === 'Home' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${activeSection === 'Home' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
+                }`}
             >
               Home
             </button>
-            
+
             {/* Projects Dropdown button */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
-                className={`flex items-center gap-1 px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${
-                  activeSection === 'Projects' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-                }`}
+                className={`flex items-center gap-1 px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${activeSection === 'Projects' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
+                  }`}
               >
                 <span>Projects</span>
                 <ChevronDown size={13} className={`transition-transform duration-300 ${projectsDropdownOpen ? 'rotate-180' : ''}`} />
@@ -319,20 +317,18 @@ anish@iitm:~$ status
               )}
             </div>
 
-            <button 
+            <button
               onClick={() => handleNavClick('skills', 'Skills')}
-              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${
-                activeSection === 'Skills' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${activeSection === 'Skills' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
+                }`}
             >
               Skills
             </button>
 
-            <button 
+            <button
               onClick={() => handleNavClick('contact', 'Contact')}
-              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${
-                activeSection === 'Contact' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-lg text-sm transition-colors cursor-pointer ${activeSection === 'Contact' ? 'bg-white/15 text-white' : 'text-white/70 hover:text-white'
+                }`}
             >
               Contact
             </button>
@@ -340,13 +336,13 @@ anish@iitm:~$ status
 
           {/* Desktop Right CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <button 
+            <button
               onClick={() => handleNavClick('about', 'About')}
               className="liquid-glass text-white text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
             >
               Resume
             </button>
-            <button 
+            <button
               onClick={() => handleNavClick('contact', 'Contact')}
               className="bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/90 transition-colors cursor-pointer"
             >
@@ -355,7 +351,7 @@ anish@iitm:~$ status
           </div>
 
           {/* Mobile menu toggle */}
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden liquid-glass text-white p-2 rounded-lg cursor-pointer"
           >
@@ -365,40 +361,40 @@ anish@iitm:~$ status
           {/* Mobile Menu Drawer */}
           {mobileMenuOpen && (
             <div className="absolute top-[72px] left-4 right-4 z-30 liquid-glass rounded-2xl p-4 flex flex-col gap-1 border border-white/5 shadow-2xl animate-in fade-in duration-300">
-              <button 
+              <button
                 onClick={() => handleNavClick('hero', 'Home')}
                 className="w-full text-left px-4 py-3 rounded-xl text-sm hover:bg-white/5 transition-colors text-white"
               >
                 Home
               </button>
-              <button 
+              <button
                 onClick={() => handleNavClick('projects', 'Projects')}
                 className="w-full text-left px-4 py-3 rounded-xl text-sm hover:bg-white/5 transition-colors text-white"
               >
                 Projects
               </button>
-              <button 
+              <button
                 onClick={() => handleNavClick('skills', 'Skills')}
                 className="w-full text-left px-4 py-3 rounded-xl text-sm hover:bg-white/5 transition-colors text-white"
               >
                 Skills
               </button>
-              <button 
+              <button
                 onClick={() => handleNavClick('contact', 'Contact')}
                 className="w-full text-left px-4 py-3 rounded-xl text-sm hover:bg-white/5 transition-colors text-white"
               >
                 Contact
               </button>
-              
+
               {/* Mobile CTA Row */}
               <div className="flex gap-2 mt-2 pt-3 border-t border-white/10">
-                <button 
+                <button
                   onClick={() => handleNavClick('about', 'About')}
                   className="flex-1 liquid-glass text-white text-center text-xs font-semibold py-3 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
                 >
                   Resume
                 </button>
-                <button 
+                <button
                   onClick={() => handleNavClick('contact', 'Contact')}
                   className="flex-1 bg-white text-black text-center text-xs font-semibold py-3 rounded-full hover:bg-white/90 transition-colors cursor-pointer"
                 >
@@ -411,9 +407,9 @@ anish@iitm:~$ status
 
         {/* Hero Content */}
         <div className="absolute bottom-0 left-0 z-20 px-6 sm:px-12 pb-10 sm:pb-16 max-w-2xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
             <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-4">
@@ -422,16 +418,16 @@ anish@iitm:~$ status
             <p className="text-white/60 text-sm leading-relaxed mb-7 max-w-md font-light">
               BS Data Science & Applications student at IIT Madras. I build AI-powered web products, trading platforms, and automation systems — shipping real software across full-stack, data, and ML.
             </p>
-            
+
             {/* Buttons Row */}
             <div className="flex flex-wrap items-center gap-3">
-              <button 
+              <button
                 onClick={() => handleNavClick('projects', 'Projects')}
                 className="bg-white text-black text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-white/90 transition-colors cursor-pointer"
               >
                 View Projects
               </button>
-              <button 
+              <button
                 onClick={() => handleNavClick('contact', 'Contact')}
                 className="liquid-glass text-white text-sm sm:text-base font-medium px-6 sm:px-7 py-3 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
               >
@@ -454,7 +450,7 @@ anish@iitm:~$ status
           </div>
 
           {/* Right Terminal Card */}
-          <div 
+          <div
             ref={terminalRef}
             className="bg-[#1A1A1C] rounded-2xl p-6 font-mono text-sm border border-white/5 shadow-2xl min-h-[180px] flex flex-col justify-start"
           >
@@ -463,7 +459,7 @@ anish@iitm:~$ status
               <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <span className="w-3 h-3 rounded-full bg-green-500/80" />
             </div>
-            
+
             {/* Terminal typewriter output */}
             <div className="text-emerald-400 leading-relaxed whitespace-pre-wrap flex-1">
               {terminalText}
@@ -484,7 +480,7 @@ anish@iitm:~$ status
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-3 lg:gap-3 w-full max-w-[936px]">
           {projectCards.map((card) => (
-            <FeatureCard 
+            <FeatureCard
               key={card.title}
               title={card.title}
               description={card.description}
@@ -507,23 +503,23 @@ anish@iitm:~$ status
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {skillCategories.map((category) => (
-              <div 
-                key={category.title} 
+              <div
+                key={category.title}
                 className="relative flex flex-col justify-start items-stretch w-full group"
               >
                 {/* Glow Background */}
-                <div 
+                <div
                   className="absolute inset-0 w-full h-full opacity-60 rounded-[32px] pointer-events-none transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
-                  style={{ 
-                    background: category.gradient, 
-                    filter: "blur(35px)" 
+                  style={{
+                    background: category.gradient,
+                    filter: "blur(35px)"
                   }}
                 />
-                
+
                 {/* Foreground Card */}
-                <div 
+                <div
                   className="relative z-10 self-stretch rounded-[32px] overflow-hidden transition-all duration-300"
-                  style={{ 
+                  style={{
                     border: "6px solid transparent",
                     background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, ${category.gradient} border-box`
                   }}
@@ -532,11 +528,11 @@ anish@iitm:~$ status
                     <span className="text-white/40 text-xs uppercase tracking-widest mb-4 font-semibold font-mono block">
                       {category.title}
                     </span>
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill) => (
-                        <span 
-                          key={skill} 
+                        <span
+                          key={skill}
                           className="text-xs px-2.5 py-1 rounded-full bg-white/8 text-white/70 font-light border border-white/[0.02]"
                         >
                           {skill}
@@ -562,17 +558,17 @@ anish@iitm:~$ status
             {/* Email card */}
             <div className="relative flex flex-col justify-start items-stretch w-full group">
               {/* Glow Background */}
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full opacity-60 rounded-[32px] pointer-events-none transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
-                style={{ 
-                  background: "linear-gradient(137deg, #FFB1CE 0%, #F43F5E 50%, #BE123C 100%)", 
-                  filter: "blur(35px)" 
+                style={{
+                  background: "linear-gradient(137deg, #FFB1CE 0%, #F43F5E 50%, #BE123C 100%)",
+                  filter: "blur(35px)"
                 }}
               />
-              <a 
-                href="mailto:anishpatil146@gmail.com" 
+              <a
+                href="mailto:anishpatil146@gmail.com"
                 className="relative z-10 self-stretch rounded-[32px] overflow-hidden transition-all duration-300 flex items-center gap-3 p-5"
-                style={{ 
+                style={{
                   border: "6px solid transparent",
                   background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, linear-gradient(137deg, #FFB1CE 0%, #F43F5E 50%, #BE123C 100%) border-box`
                 }}
@@ -590,17 +586,17 @@ anish@iitm:~$ status
             {/* Phone card */}
             <div className="relative flex flex-col justify-start items-stretch w-full group">
               {/* Glow Background */}
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full opacity-60 rounded-[32px] pointer-events-none transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
-                style={{ 
-                  background: "linear-gradient(137deg, #6EE7B7 0%, #10B981 50%, #047857 100%)", 
-                  filter: "blur(35px)" 
+                style={{
+                  background: "linear-gradient(137deg, #6EE7B7 0%, #10B981 50%, #047857 100%)",
+                  filter: "blur(35px)"
                 }}
               />
-              <a 
-                href="tel:+919096861443" 
+              <a
+                href="tel:+919096861443"
                 className="relative z-10 self-stretch rounded-[32px] overflow-hidden transition-all duration-300 flex items-center gap-3 p-5"
-                style={{ 
+                style={{
                   border: "6px solid transparent",
                   background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, linear-gradient(137deg, #6EE7B7 0%, #10B981 50%, #047857 100%) border-box`
                 }}
@@ -618,17 +614,17 @@ anish@iitm:~$ status
 
           {/* Social Row */}
           <div className="flex items-center justify-center gap-6 mt-12">
-            <a 
-              href="https://github.com/anishpatil146" 
-              target="_blank" 
+            <a
+              href="https://github.com/anishpatil146"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-white transition-colors"
             >
               <GithubIcon />
             </a>
-            <a 
-              href="https://linkedin.com/in/anishpatil146" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/anishpatil146"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-white transition-colors"
             >
